@@ -2,6 +2,22 @@
 
 Backend code for responding to API calls from the React site
 
+## Usage
+
+Usage: `https://your_server_IP_address/get.php?q=` followed by your query
+
+You can also specify an index pattern: `https://your_server_IP_address/get.php?q=`  followed by your query, `&i=` followed by the index pattern
+
+Example:
+
+```bash
+https://your_server_IP_address/get.php?q='{"query": {"match_all": {}}}'
+```
+
+```bash
+https://your_server_IP_address/get.php?q='{"query": {"match_all": {}}}'&i=metrics-*
+```
+
 ## Installing Apache
 
 Install the apache2 package
