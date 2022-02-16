@@ -7,11 +7,12 @@ function is_JSON()
 
 header('Content-type: application/json');
 $queryVal = $_GET["q"];
+$indexVal = $_GET["i"];
 //$stripVal = queryVal without the first and last character
 $stripVal = substr($queryVal, 1, strlen($queryVal)-2);
 if (is_JSON($stripVal)) {
     chdir('/var/www/html/pythonScripts');
-    $command = 'python3 query.py ' . $queryVal;
+    $command = 'python3 query.py ' . $queryVal . ' ' . $indexVal;
     $output = shell_exec($command);
     echo $output;
 }

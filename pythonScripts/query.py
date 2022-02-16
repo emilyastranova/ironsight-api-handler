@@ -15,15 +15,19 @@ apiKey = "YU44dnIzNEJ0UFZoZkJIa19OYWs6emJRSk01LWhTMC1hNm0xMFBPUGZuUQ=="
 headers = {"Content-Type" : "application/json", "Authorization": str("ApiKey " + apiKey)}
 
 # Make a GET request to the API
-def get(queryJSON):
-    url = "http://ssh.tylerharrison.dev:9200/_search"
+def get(queryJSON, index=""):
+    url = "http://ssh.tylerharrison.dev:9200/" + index + "/_search"
     response = requests.get(url, headers=headers, data=queryJSON)
     return json.dumps(response.json())
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         query = ""
-    else:
+        print(get(query))
+    elif len(sys.argv) == 2:
         query = sys.argv[1]
-
-    print(get(query))
+        print(get(query))
+    elif len(sys.argv) == 3:
+        query = sys.argv[1]
+        index = sys.argv[2]
+        print(get(query, index))
