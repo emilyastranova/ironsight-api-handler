@@ -1,6 +1,7 @@
 <?php
 
 header('Content-type: application/json');
+header('Access-Control-Allow-Origin: *');
 $queryVal = $_GET["q"];
 $indexVal = $_GET["i"];
 
