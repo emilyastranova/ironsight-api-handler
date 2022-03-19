@@ -11,9 +11,11 @@ import json
 #   }
 # }'
 
+# Incoming data looks like this: '\{\"size\":100,\"aggs\":\{\"hostnames\":\{\"terms\":\{\"field\":\"host.name\",\"size\":100\}\}\}\}'
 
 # Make a GET request to the API
 def get(queryJSON, index=""):
+    queryJSON = queryJSON.replace("\\", "")
     # Load in configuration file
     with open('../config.json') as config_file:
         config = json.load(config_file)
@@ -31,8 +33,6 @@ def get(queryJSON, index=""):
     elastic_url = elastic_url + index + "/_search"
     headers = {"Content-Type" : "application/json", "Authorization": str("ApiKey " + elastic_token)}
     response = requests.get(elastic_url, headers=headers, data=queryJSON)
-    print(elastic_url)
-    print(response)
     return json.dumps(response.json())
 
 if __name__ == "__main__":
