@@ -11,6 +11,17 @@ import json
 #   }
 # }'
 
+# Load in configuration file
+with open('../config.json') as config_file:
+    config = json.load(config_file)
+    sql_server = config['sql_server']
+    sql_user = config['sql_user']
+    sql_pass = config['sql_pass']
+    sql_db = config['sql_db']
+
+    elastic_url = config['elasticsearch_url']
+    elastic_token = config['elasticsearch_api_token']
+
 apiKey = "YU44dnIzNEJ0UFZoZkJIa19OYWs6emJRSk01LWhTMC1hNm0xMFBPUGZuUQ=="
 headers = {"Content-Type" : "application/json", "Authorization": str("ApiKey " + apiKey)}
 
@@ -21,12 +32,17 @@ def get(queryJSON, index=""):
     return json.dumps(response.json())
 
 if __name__ == "__main__":
+    # Default: query all
     if len(sys.argv) < 2:
         query = ""
         print(get(query))
+    
+    # User specified query
     elif len(sys.argv) == 2:
         query = sys.argv[1]
         print(get(query))
+
+    # User specified query and index
     elif len(sys.argv) == 3:
         query = sys.argv[1]
         index = sys.argv[2]

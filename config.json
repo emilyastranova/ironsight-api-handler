@@ -1,0 +1,11 @@
+{
+    "sql_server": "ssh.rellis.dev",
+    "sql_user": "ironsight",
+    "sql_pass": "ironsight",
+    "sql_db": "ironsight",
+
+    "elasticsearch_url": "http://ssh.tylerharrison.dev:8220",
+    "elasticsearch_api_token": "a1VJbXBYNEJZOEUtRnJyRlhvc0Q6U3VFZGRPcldUcW0tRzMyX2s3UmtTUQ==",
+
+    "ironsight_api_token": "test_token"
+}

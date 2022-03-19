@@ -1,5 +1,7 @@
 # Ironsight API Handler
 
+<strong>Warning</strong>: This code is not complete or secure. Use at your own risk.
+
 Backend code for responding to API calls from the React site
 
 ## Usage
