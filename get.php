@@ -9,8 +9,8 @@ $indexVal = $_GET["i"];
 $queryVal = escapeshellcmd($queryVal);
 $indexVal = escapeshellcmd($indexVal);
 
-// Check if first character was a '{'
-$isElastic = substr($queryVal, 0, 1) == '{' || substr($queryVal, 1, 2) == '{';
+// Check if string contains a '{'}
+$isElastic = strpos($queryVal, '{');
 
 chdir('/var/www/html/python_scripts');
 if ($isElastic) {
