@@ -9,9 +9,16 @@ $indexVal = $_GET["i"];
 $queryVal = escapeshellcmd($queryVal);
 $indexVal = escapeshellcmd($indexVal);
 
-chdir('/var/www/html/python_scripts');
-$command = 'python3 query.py ' . $queryVal . ' ' . $indexVal;
+// Check if first character was a '{'
+$isElastic = substr($queryVal, 0, 1) == '{' || substr($queryVal, 1, 2) == '{';
 
+chdir('/var/www/html/python_scripts');
+if ($isElastic) {
+    $command = 'python3 query.py --elastic ' . $queryVal . ' ' . $indexVal;
+}
+else {
+    $command = 'python3 query.py --data ' . $queryVal;
+}
 $output = shell_exec($command);
 echo $output;
 ?>
