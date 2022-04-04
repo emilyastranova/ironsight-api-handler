@@ -12,7 +12,7 @@ $indexVal = escapeshellcmd($indexVal);
 // Check if string contains a '{'}
 $isElastic = strpos($queryVal, '{');
 
-chdir('/var/www/html/python_scripts');
+chdir('/var/www/ironsight-api-handler/scripts');
 if ($isElastic) {
     $command = 'python3 query.py --elastic ' . $queryVal . ' ' . $indexVal;
 }
