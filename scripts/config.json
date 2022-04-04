@@ -1,0 +1,18 @@
+{
+    "sql_server": "ssh.rellis.dev",
+    "sql_user": "ironsight",
+    "sql_pass": "ironsight",
+    "sql_db": "ironsight",
+
+    "harvester_api_url": "https://harvester.rellis.dev/apis/kubevirt.io/v1/namespaces/default/virtualmachines",
+    "harvester_api_token": "token-gvwxj:lvl42sg9jw9t8lkq8rz2kflpgphm9lwzh6plq2lj7rpdd52ngn7pj9",
+
+    "elastic_fleet_url": "https://fleet.rellis.dev",
+    "elastic_fleet_api_token": "NU0zdDUzOEJZWmJDWDF5QndxTXI6VEpkTXI1LWpRcVN0RTdCRUVMTml5Zw==",
+    "elastic_version": "8.1.2",
+
+    "elasticsearch_url": "https://elastic.rellis.dev/",
+    "elasticsearch_api_token": "Z1ByUzUzOEIxN0dqN09tX2gwUEg6TDB0RW5wN0JUNkcyazRyWV9tZEhKZw==",
+
+    "ironsight_api_token": "test_token"
+}
