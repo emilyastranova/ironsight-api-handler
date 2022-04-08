@@ -1,0 +1,3 @@
+[submodule "scripts/ironsight_harvester_api"]
+	path = scripts/ironsight_harvester_api
+	url = git@github.com:tamuc-ironsight/ironsight-harvester-api.git
