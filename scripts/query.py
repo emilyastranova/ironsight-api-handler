@@ -119,10 +119,12 @@ def query_ironsight(raw_query, params=None):
             start_time = str(int(time.time()) - 900)
             # end_time is now in epochs
             end_time = str(time.time())
+            step = str(60)
         else:
             start_time = params[0]
             end_time = params[1]
-        return(ironsight.get_cpu_usage(start_time, end_time))
+            step = params[2]
+        return(ironsight.get_cpu_usage(start_time, end_time, step))
 
     else:
         return "Invalid query"
