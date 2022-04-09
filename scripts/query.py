@@ -114,13 +114,19 @@ def query_ironsight(raw_query, params=None):
 
     elif raw_query == "get_cpu_usage":
         # If no params, return last 15 minutes CPU usage
-        if len(params) < 2:
+        if len(params) == 0:
             # start_time is 15 minutes ago in epochs
             start_time = str(int(time.time()) - 900)
             # end_time is now in epochs
             end_time = str(time.time())
             step = str(60)
-        else:
+        elif len(params) == 1:
+            # start_time is 15 minutes ago in epochs
+            start_time = str(int(time.time()) - 900)
+            # end_time is now in epochs
+            end_time = str(time.time())
+            step = str(params[0])
+        elif len(params) == 2:
             start_time = params[0]
             end_time = params[1]
             step = params[2]
