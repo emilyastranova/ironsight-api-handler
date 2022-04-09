@@ -6,6 +6,7 @@ $queryVal = $_GET["q"];
 $indexVal = $_GET["i"];
 $startTime = $_GET["start_time"];
 $endTime = $_GET["end_time"];
+$step = $_GET["step"];
 
 // Make sure command is safe (no shell injection)
 $queryVal = escapeshellcmd($queryVal);
@@ -14,7 +15,7 @@ $startTime = escapeshellcmd($startTime);
 $endTime = escapeshellcmd($endTime);
 
 // Add start time and end time for query
-$queryVal = $queryVal . " " . $startTime . " " . $endTime;
+$queryVal = $queryVal . " " . $startTime . " " . $endTime . " " . $step;
 
 // Check if string contains a '{'}
 $isElastic = strpos($queryVal, '{');
