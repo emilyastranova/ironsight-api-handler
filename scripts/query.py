@@ -108,6 +108,9 @@ def query_ironsight(raw_query):
     elif raw_query == "get_news":
         return(get_news())
 
+    elif raw_query == "get_metrics":
+        return(ironsight.get_metrics())
+
     else:
         return "Invalid query"
 
