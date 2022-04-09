@@ -4,6 +4,7 @@ import sys
 import json
 sys.path.insert(0, './ironsight_harvester_api')
 import ironsight_harvester_api as ironsight
+import time
 
 # Example query
 # curl --header "Authorization: ApiKey YU44dnIzNEJ0UFZoZkJIa19OYWs6emJRSk01LWhTMC1hNm0xMFBPUGZuUQ==" --header "Content-Type: application/json" -XGET "http://ssh.tylerharrison.dev:9200/_search" -d'
@@ -82,7 +83,7 @@ def get_news():
     articles = articles.replace('\n', '')
     return articles
 
-def query_ironsight(raw_query):
+def query_ironsight(raw_query, params=None):
     with open('config.json') as config_file:
         config = json.load(config_file)
         sql_server = config['sql_server']
@@ -110,6 +111,18 @@ def query_ironsight(raw_query):
 
     elif raw_query == "get_metrics":
         return(ironsight.get_metrics())
+
+    elif raw_query == "get_cpu_usage":
+        # If no params, return last 15 minutes CPU usage
+        if len(params) < 2:
+            # start_time is 15 minutes ago in epochs
+            start_time = str(int(time.time()) - 900)
+            # end_time is now in epochs
+            end_time = str(time.time())
+        else:
+            start_time = params[0]
+            end_time = params[1]
+        return(ironsight.get_cpu_usage(start_time, end_time))
 
     else:
         return "Invalid query"
@@ -141,6 +154,6 @@ if __name__ == "__main__":
         if len(sys.argv) < 2:
             print("{}")
         # User specified query
-        elif len(sys.argv) == 2:
+        elif len(sys.argv) >= 2:
             query = sys.argv[1]
-            print(query_ironsight(query))
+            print(query_ironsight(query, sys.argv[2:]))

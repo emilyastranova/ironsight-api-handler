@@ -4,10 +4,17 @@ header('Content-type: application/json');
 header('Access-Control-Allow-Origin: *');
 $queryVal = $_GET["q"];
 $indexVal = $_GET["i"];
+$startTime = $_GET["start_time"];
+$endTime = $_GET["end_time"];
 
 // Make sure command is safe (no shell injection)
 $queryVal = escapeshellcmd($queryVal);
 $indexVal = escapeshellcmd($indexVal);
+$startTime = escapeshellcmd($startTime);
+$endTime = escapeshellcmd($endTime);
+
+// Add start time and end time for query
+$queryVal = $queryVal . " " . $startTime . " " . $endTime;
 
 // Check if string contains a '{'}
 $isElastic = strpos($queryVal, '{');
