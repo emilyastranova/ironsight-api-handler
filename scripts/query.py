@@ -192,6 +192,9 @@ def query_ironsight(raw_query, params=None):
             step = params[2]
         return(ironsight.get_disk_usage(start_time, end_time, step))
 
+    elif raw_query == "get_node_names":
+        return(ironsight.get_node_names())
+
     else:
         return "Invalid query"
 
