@@ -227,6 +227,10 @@ def query_ironsight(raw_query, params=None):
         vm_name = params[0]
         return(ironsight.power_off_vm(vm_name))
 
+    elif raw_query == "power_toggle_vm":
+        vm_name = params[0]
+        return(ironsight.power_toggle_vm(vm_name))
+
     else:
         return "Invalid query"
 
