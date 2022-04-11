@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 // Will need to account for the auto-incrementing id
 else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Table is logs in ironsight database
-    $sql = "INSERT INTO ironsight.log_data (log_timestamp, log_username, log_activity) VALUES ('$timestamp', '$username', '$activity')";
+    $sql = "INSERT INTO `ironsight`.`log_data` (`log_timestamp`, `log_username`, `log_activity`) VALUES ('$timestamp', '$username', '$activity')";
     $result = $conn->query($sql);
-    echo '{"status": "success"}';
+    echo '{"status": "success", "timestamp": "' . $timestamp . '", "username": "' . $username . '", "activity": "' . $activity . '"}';
 }
