@@ -216,6 +216,14 @@ def query_ironsight(raw_query, params=None):
         student_name = params[1]
         return(ironsight.get_lab_details(lab_num, student_name))
 
+    elif raw_query == "power_on_vm":
+        vm_name = params[0]
+        return(ironsight.power_on_vm(vm_name))
+
+    elif raw_query == "power_off_vm":
+        vm_name = params[0]
+        return(ironsight.power_off_vm(vm_name))
+
     else:
         return "Invalid query"
 
