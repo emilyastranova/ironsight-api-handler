@@ -198,6 +198,9 @@ def query_ironsight(raw_query, params=None):
     elif raw_query == "get_num_vms":
         return(ironsight.get_num_vms())
 
+    elif raw_query == "get_harvester_vms":
+        return(ironsight.get_harvester_vms())
+
     elif raw_query == "get_num_vms_on":
         return(ironsight.get_num_vms_on())
 
