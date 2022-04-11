@@ -9,6 +9,7 @@ $endTime = $_GET["end_time"];
 $step = $_GET["step"];
 $lab_num = $_GET["lab_num"];
 $student_name = $_GET["student_name"];
+$vm_name = $_GET["vm_name"];
 
 // Make sure command is safe (no shell injection)
 $queryVal = escapeshellcmd($queryVal);
@@ -18,12 +19,13 @@ $endTime = escapeshellcmd($endTime);
 $step = escapeshellcmd($step);
 $lab_num = escapeshellcmd($lab_num);
 $student_name = escapeshellcmd($student_name);
+$vm_name = escapeshellcmd($vm_name);
 
 // Add start time and end time for query
 $queryVal = $queryVal . " " . $startTime . " " . $endTime . " " . $step;
 
 // Add lab number for query
-$queryVal = $queryVal . " " . $lab_num . " " . $student_name;
+$queryVal = $queryVal . " " . $lab_num . " " . $student_name . " " . $vm_name;
 
 // Check if string contains a '{'}
 $isElastic = strpos($queryVal, '{');
