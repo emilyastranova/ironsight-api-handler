@@ -207,6 +207,15 @@ def query_ironsight(raw_query, params=None):
     elif raw_query == "get_classes":
         return(ironsight.get_classes())
 
+    elif raw_query == "get_lab_overview":
+        lab_num = params[0]
+        return(ironsight.get_lab_overview(lab_num))
+    
+    elif raw_query == "get_lab_details":
+        lab_num = params[0]
+        student_name = params[1]
+        return(ironsight.get_lab_details(lab_num, student_name))
+
     else:
         return "Invalid query"
 
