@@ -195,6 +195,15 @@ def query_ironsight(raw_query, params=None):
     elif raw_query == "get_node_names":
         return(ironsight.get_node_names())
 
+    elif raw_query == "get_num_vms":
+        return(ironsight.get_num_vms())
+
+    elif raw_query == "get_num_vms_on":
+        return(ironsight.get_num_vms_on())
+
+    elif raw_query == "get_vms_on":
+        return(ironsight.get_vms_on())
+
     else:
         return "Invalid query"
 
