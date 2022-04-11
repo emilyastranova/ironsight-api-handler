@@ -17,7 +17,7 @@ $is_elastic = $data["is_elastic"];
 // Make sure command is safe (no shell injection)
 $vm_name = escapeshellcmd($vm_name);
 
-chdir('/var/www/html/ironsight-api-handler/ironsight_harvester_api/');
+chdir('/var/www/ironsight-api-handler/scripts/ironsight_harvester_api/');
 $command = 'python3 create_vm.py ' . $vm_name . ' ' . $vm_template . ' ' . $vm_username;
 $output = shell_exec($command);
 // Get rid of newlines in output
