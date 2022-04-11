@@ -39,9 +39,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 }
 
 // If request is POST, insert log data
+// INSERT INTO `ironsight`.`log_data` (`log_id`, `log_timestamp`, `log_username`, `log_activity`) VALUES ('2', '2022-04-02 00:02:00', 'tyler_harrison', '[Ironsight] Logged out');
+// Will need to account for the auto-incrementing id
 else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Table is logs in ironsight database
-    $sql = "INSERT INTO ironsight.log_data (timestamp, username, activity) VALUES ('$timestamp', '$username', '$activity')";
+    $sql = "INSERT INTO ironsight.log_data (log_timestamp, log_username, log_activity) VALUES ('$timestamp', '$username', '$activity')";
     $result = $conn->query($sql);
     echo '{"status": "success"}';
 }
