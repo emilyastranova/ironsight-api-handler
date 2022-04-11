@@ -204,6 +204,9 @@ def query_ironsight(raw_query, params=None):
     elif raw_query == "get_vms_on":
         return(ironsight.get_vms_on())
 
+    elif raw_query == "get_classes":
+        return(ironsight.get_classes())
+
     else:
         return "Invalid query"
 
