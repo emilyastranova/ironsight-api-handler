@@ -15,10 +15,10 @@ $template_override = $data["template_override"];
 $vm_name = escapeshellcmd($vm_name);
 $vm_template = escapeshellcmd($vm_template);
 $vm_username = escapeshellcmd($vm_username);
-$template_override = escapeshellcmd($template_override);
+// $template_override = escapeshellcmd($template_override);
 
 // This causes an extra ", " to be added to the end of the string, so we remove it
-$template_override = rtrim($template_override, ", ");
+// $template_override = rtrim($template_override, ",");
 
 chdir('/var/www/ironsight-api-handler/scripts/ironsight_harvester_api/');
 $command = 'python3 create_vm.py ' . $vm_name . ' ' . $vm_template . ' ' . $vm_username . ' ' . $template_override;
