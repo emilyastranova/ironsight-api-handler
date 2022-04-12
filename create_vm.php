@@ -17,6 +17,11 @@ $vm_template = escapeshellcmd($vm_template);
 $vm_username = escapeshellcmd($vm_username);
 $template_override = escapeshellcmd($template_override);
 
+// On template_override, make sure double quotes are escaped
+if ($template_override) {
+    $template_override = str_replace('"', '\"', $template_override);
+}
+
 chdir('/var/www/ironsight-api-handler/scripts/ironsight_harvester_api/');
 $command = 'python3 create_vm.py ' . $vm_name . ' ' . $vm_template . ' ' . $vm_username . ' ' . $template_override;
 $output = shell_exec($command);
