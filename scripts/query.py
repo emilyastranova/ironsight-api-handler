@@ -207,8 +207,8 @@ def query_ironsight(raw_query, params=None):
     elif raw_query == "get_vms_on":
         return(ironsight.get_vms_on())
 
-    elif raw_query == "get_classes":
-        return(ironsight.get_classes())
+    elif raw_query == "get_courses":
+        return(ironsight.get_courses())
 
     elif raw_query == "get_lab_overview":
         lab_num = params[0]
