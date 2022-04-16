@@ -192,6 +192,126 @@ def query_ironsight(raw_query, params=None):
             step = params[2]
         return(ironsight.get_disk_usage(start_time, end_time, step))
 
+    elif raw_query == "get_vm_cpu_usage":
+        # If no params, return last 15 minutes CPU usage
+        if len(params) == 0:
+            # start_time is 15 minutes ago in epochs
+            start_time = str(int(time.time()) - 900)
+            # end_time is now in epochs
+            end_time = str(time.time())
+            step = str(60)
+        elif len(params) == 1:
+            # start_time is 15 minutes ago in epochs
+            start_time = str(int(time.time()) - 900)
+            # end_time is now in epochs
+            end_time = str(time.time())
+            step = str(params[0])
+        elif len(params) == 2:
+            start_time = params[0]
+            end_time = params[1]
+            step = params[2]
+        return(ironsight.get_vm_cpu_usage(start_time, end_time, step))
+
+    elif raw_query == "get_vm_memory_usage":
+        # If no params, return last 15 minutes memory usage
+        if len(params) == 0:
+            # start_time is 15 minutes ago in epochs
+            start_time = str(int(time.time()) - 900)
+            # end_time is now in epochs
+            end_time = str(time.time())
+            step = str(60)
+        elif len(params) == 1:
+            # start_time is 15 minutes ago in epochs
+            start_time = str(int(time.time()) - 900)
+            # end_time is now in epochs
+            end_time = str(time.time())
+            step = str(params[0])
+        elif len(params) == 2:
+            start_time = params[0]
+            end_time = params[1]
+            step = params[2]
+        return(ironsight.get_vm_memory_usage(start_time, end_time, step))
+
+    elif raw_query == "get_vm_storage_read_usage":
+        # If no params, return last 15 minutes storage read usage
+        if len(params) == 0:
+            # start_time is 15 minutes ago in epochs
+            start_time = str(int(time.time()) - 900)
+            # end_time is now in epochs
+            end_time = str(time.time())
+            step = str(60)
+        elif len(params) == 1:
+            # start_time is 15 minutes ago in epochs
+            start_time = str(int(time.time()) - 900)
+            # end_time is now in epochs
+            end_time = str(time.time())
+            step = str(params[0])
+        elif len(params) == 2:
+            start_time = params[0]
+            end_time = params[1]
+            step = params[2]
+        return(ironsight.get_vm_storage_read_usage(start_time, end_time, step))
+
+    elif raw_query == "get_vm_storage_write_usage":
+        # If no params, return last 15 minutes storage write usage
+        if len(params) == 0:
+            # start_time is 15 minutes ago in epochs
+            start_time = str(int(time.time()) - 900)
+            # end_time is now in epochs
+            end_time = str(time.time())
+            step = str(60)
+        elif len(params) == 1:
+            # start_time is 15 minutes ago in epochs
+            start_time = str(int(time.time()) - 900)
+            # end_time is now in epochs
+            end_time = str(time.time())
+            step = str(params[0])
+        elif len(params) == 2:
+            start_time = params[0]
+            end_time = params[1]
+            step = params[2]
+        return(ironsight.get_vm_storage_write_usage(start_time, end_time, step))
+
+    elif raw_query == "get_vm_network_read_usage":
+        # If no params, return last 15 minutes network read usage
+        if len(params) == 0:
+            # start_time is 15 minutes ago in epochs
+            start_time = str(int(time.time()) - 900)
+            # end_time is now in epochs
+            end_time = str(time.time())
+            step = str(60)
+        elif len(params) == 1:
+            # start_time is 15 minutes ago in epochs
+            start_time = str(int(time.time()) - 900)
+            # end_time is now in epochs
+            end_time = str(time.time())
+            step = str(params[0])
+        elif len(params) == 2:
+            start_time = params[0]
+            end_time = params[1]
+            step = params[2]
+        return(ironsight.get_vm_network_read_usage(start_time, end_time, step))
+
+    elif raw_query == "get_vm_network_write_usage":
+        # If no params, return last 15 minutes network write usage
+        if len(params) == 0:
+            # start_time is 15 minutes ago in epochs
+            start_time = str(int(time.time()) - 900)
+            # end_time is now in epochs
+            end_time = str(time.time())
+            step = str(60)
+        elif len(params) == 1:
+            # start_time is 15 minutes ago in epochs
+            start_time = str(int(time.time()) - 900)
+            # end_time is now in epochs
+            end_time = str(time.time())
+            step = str(params[0])
+        elif len(params) == 2:
+            start_time = params[0]
+            end_time = params[1]
+            step = params[2]
+        return(ironsight.get_vm_network_write_usage(start_time, end_time, step))
+
     elif raw_query == "get_node_names":
         return(ironsight.get_node_names())
 
