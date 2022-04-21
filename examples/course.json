@@ -1,0 +1,12 @@
+{
+    "action": "create",
+    "type": "course",
+    "data": {
+        "course_name": "test_course",
+        "course_id": "test_course",
+        "thumbnail": "",
+        "tags": [
+            "linux"
+        ]
+    }
+}
