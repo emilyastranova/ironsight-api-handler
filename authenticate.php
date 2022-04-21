@@ -8,17 +8,10 @@ $username = $data["username"];
 $password = $data["password"];
 
 // Check against database
-// $sql_server = "ssh.rellis.dev";
-// $sql_username = "ironsight";
-// $sql_password = "ironsight";
-// $dbname = "ironsight";
-
-// Get credentials from config json in scrtipts folder
-$config = json_decode(file_get_contents('/var/www/ironsight-api-handler/scripts/ironsight_harvester_api/config.json'), true);
-$sql_server = $config["sql_server"];
-$sql_username = $config["sql_user"];
-$sql_password = $config["sql_pass"];
-$dbname = $config["sql_db"];
+$sql_server = "ssh.rellis.dev";
+$sql_username = "ironsight";
+$sql_password = "ironsight";
+$dbname = "ironsight";
 
 // Create connection
 $conn = new mysqli($sql_server, $sql_username, $sql_password, $dbname);
