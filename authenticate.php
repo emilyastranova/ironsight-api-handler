@@ -13,8 +13,8 @@ $password = $data["password"];
 // $sql_password = "ironsight";
 // $dbname = "ironsight";
 
-// Get credentials from config file in scrtipts folder
-$config = json_decode('/var/www/ironsight-api-handler/scripts/config.json');
+// Get credentials from config json in scrtipts folder
+$config = json_decode(file_get_contents('/var/www/ironsight-api-handler/scripts/ironsight_harvester_api/config.json'), true);
 $sql_server = $config["sql_server"];
 $sql_username = $config["sql_user"];
 $sql_password = $config["sql_pass"];
