@@ -14,7 +14,7 @@ $password = $data["password"];
 // $dbname = "ironsight";
 
 // Get credentials from config file in scrtipts folder
-$config = parse_ini_file('/var/www/ironsight-api-handler/scripts/config.json');
+$config = json_decode('/var/www/ironsight-api-handler/scripts/config.json');
 $sql_server = $config["sql_server"];
 $sql_username = $config["sql_user"];
 $sql_password = $config["sql_pass"];
