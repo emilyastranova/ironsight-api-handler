@@ -84,12 +84,6 @@ def get_news():
     return articles
 
 def query_ironsight(raw_query, params=None):
-    with open('config.json') as config_file:
-        config = json.load(config_file)
-        sql_server = config['sql_server']
-        sql_user = config['sql_user']
-        sql_pass = config['sql_pass']
-        sql_db = config['sql_db']
 
     if raw_query == "get_users":
         return(ironsight.get_users())
@@ -105,6 +99,15 @@ def query_ironsight(raw_query, params=None):
     
     elif raw_query == "get_tags":
         return(ironsight.get_tags())
+    
+    elif raw_query == "get_courses":
+        return(ironsight.get_courses())
+
+    elif raw_query == "get_permissions":
+        return(ironsight.get_permissions())
+
+    elif raw_query == "get_roles":
+        return(ironsight.get_roles())
 
     elif raw_query == "get_news":
         return(get_news())
