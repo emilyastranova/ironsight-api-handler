@@ -1,0 +1,10 @@
+{
+    "action": "create",
+    "type": "vm",
+    "data": {
+        "vm_name": "vm-1",
+        "user_name": "user-1",
+        "lab_num": "1",
+        "template_name": "ubuntu-14.04-x64"
+    }
+}
