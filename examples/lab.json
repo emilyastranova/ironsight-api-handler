@@ -1,0 +1,15 @@
+{
+    "action": "create",
+    "type": "lab",
+    "data": {
+        "lab_name": "SSL Practice",
+        "lab_description": "This is a lab for SSL",
+        "vm_templates": ["debian11"],
+        "course": "csci_440",
+        "date_start": "2022-04-02 00:00:00",
+        "date_end": "2022-04-29 23:59:00",
+        "tags": [
+            "linux"
+        ]
+    }
+}

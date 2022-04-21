@@ -1,0 +1,21 @@
+{
+    "action": "create",
+    "type": "user",
+    "data": {
+        "first_name": "John",
+        "last_name": "Doe",
+        "user_name": "john_doe",
+        "password": "password",
+        "roles": [
+            "user"
+        ],
+        "courses": [
+            "csci_440",
+            "csci_359"
+        ],
+        "profile_pic_data": "",
+        "tags": [
+            "linux"
+        ]
+    }
+}
