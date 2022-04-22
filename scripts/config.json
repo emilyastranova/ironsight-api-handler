@@ -1,5 +1,5 @@
 {
-    "sql_server": "ssh.rellis.dev",
+    "sql_server": "127.0.0.1",
     "sql_user": "ironsight",
     "sql_pass": "ironsight",
     "sql_db": "ironsight",
