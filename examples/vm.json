@@ -1,10 +1,18 @@
 {
     "action": "create",
-    "type": "vm",
     "data": {
-        "vm_name": "vm-1",
-        "user_name": "user-1",
-        "lab_num": "1",
-        "template_name": "ubuntu-14.04-x64"
-    }
+        "course_id": "",
+        "lab_num": "",
+        "template_name": "kubuntu",
+        "template_override": {
+            "cpu_cores": "6",
+            "elastic_enrolled": "0",
+            "memory": "12",
+            "redeploy": "0",
+            "running": "0"
+        },
+        "user_name": "",
+        "vm_name": "clitest4"
+    },
+    "type": "vm"
 }
